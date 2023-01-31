@@ -1,0 +1,349 @@
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+*:before, *:after
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-weight: 400
+	overflow-x: hidden
+	margin: 0
+	height: 100vh
+	font-family: 'Roboto Serif', serif
+	
+p
+	margin: 0
+
+a
+	text-decoration: none
+	outline: none
+	display: inline-block
+	color: #000
+
+img
+	max-width: 100%
+	height: auto
+	vertical-align: bottom
+
+ul li,
+ol li
+	list-style: none
+	display: block
+	margin: 0
+
+span
+	display: inline-block
+
+ul, ol
+	display: block
+	margin: 0
+	padding-left: 0
+
+button
+	outline: none
+	border: 0
+	padding: 0
+	cursor: pointer
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	font-weight: normal
+
+strong
+	display: inline-block
+
+.site-wrap
+	overflow: hidden
+.container
+	margin: 0 auto
+	position: relative
+	padding: 0 15px
+	max-width: 1230px
+	width: 100%
+
+//ColorVariables
+$colorBg1: #FAFAFA
+$colorBg2: #fff
+$colorButton: #EFEFF0
+$colorError: #FF392E
+$colorFrame: #EBEBF0
+$colorSite: #0100D3
+$colorTxt: #C5C5C7
+$colorBlue: #2F80ED
+$colorDark: #7B828A
+$colorGreen: #30DB5B
+$colorBlack: #262626
+$colorOrange: #F15A2C
+
+
+
+.page-shoping
+	padding-left: 40px
+	&-title
+		font-size: 24px
+		font-weight: 500
+	&-wrapper
+		margin-top: 26px
+		&__selected-tabs
+			max-width: 500px
+			width: 100%
+		&__tabs
+			display: flex
+			background-color: $colorFrame
+			border-radius: 8px
+			color: $colorBlack
+			font-size: 14px
+			margin: 0 
+			padding: 2px
+			user-select: none
+			list-style-type: none 
+			cursor: pointer 
+		&__tab
+			flex: 1
+			text-align: center
+			cursor: pointer 
+			padding: 8px
+			transition: .3s
+			&.active
+				background-color: $colorBg2
+				border-radius: 8px
+			&:hover 
+				border-radius: 8px
+		&__main > div
+			display: none
+		.active[data-tab-content]
+			display: block
+		&__main
+			position: relative
+			overflow: hidden
+			margin-top: 20px
+			padding-top: 20px
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				top: 0
+				width: 100%
+				height: 5px
+				background-color: $colorFrame
+				border-radius: 10px
+			&-scroll
+				overflow-x: auto
+			&-filter-active
+				display: flex
+				justify-content: space-around 
+				align-items: center 
+				width: max-content
+				&--control
+					position: relative
+					margin-right: 10px
+					&:last-child
+						margin-right: 0
+				&--icon
+					position: absolute
+					left: 20px
+					top: 50%
+					transform: translateY(-50%)
+					max-width: 31px
+					pointer-events: none
+				&--radio
+					appearance: none 
+					display: none
+				&--text
+					font-size: 14px
+					display: flex 
+					justify-content: center 
+					align-items: center 
+					background-color: inherit 
+					text-align: center 
+					overflow: hidden 
+					border-radius: 10px
+					padding: 11px 20px 11px 60px
+					border: 1px solid $colorFrame
+					transition: linear 0.2s
+					color: $colorBlack
+					cursor: pointer
+				&--radio:checked
+					& + label
+						transition: 0.2s
+						border-color: $colorBlue
+			&-products
+				display: grid
+				grid-template-columns: repeat(5, 1fr)
+				grid-gap: 50px 
+				margin-top: 10px
+				padding-top: 30px
+				border-top: 1px solid $colorFrame
+				&--item
+					color: $colorBlack
+					animation: goodsOpacity .3s linear
+				&--image
+					min-width: 144px
+					margin-bottom: 5px
+					text-align: center
+				&--desc
+					margin-bottom: 2.5px
+					font-size: 14px
+					height: 40px
+					overflow: hidden
+				&--price
+					position: relative
+					font-size: 20px
+					margin-bottom: 6.5px
+					&::after
+						content: '₸'
+						font-weight: 600
+						font-size: 20px
+				&--order
+					font-size: 14px
+					color: #BFBFBF
+					margin-bottom: 10px
+				&--button
+					text-align: center
+					a
+						display: block
+						color: $colorSite
+						padding: 8px 5px
+						border-radius: 10px
+						border: 1px solid $colorSite
+						transition: color, background-color .3s
+						&:hover
+							transition: color, background-color .3s
+							background-color: $colorSite
+							color: $colorBg2
+			&-filter-not-active
+				display: flex
+				justify-content: space-around 
+				align-items: center 
+				width: max-content
+				&--control
+					position: relative
+					margin-right: 10px
+					&:last-child
+						margin-right: 0
+				&--icon
+					position: absolute
+					left: 20px
+					top: 50%
+					transform: translateY(-50%)
+					max-width: 31px
+					pointer-events: none
+				&--radio
+					appearance: none 
+					display: none
+				&--text
+					font-size: 14px
+					display: flex 
+					justify-content: center 
+					align-items: center 
+					background-color: inherit 
+					text-align: center 
+					overflow: hidden 
+					border-radius: 10px
+					padding: 11px 20px 11px 60px
+					border: 1px solid $colorFrame
+					transition: linear 0.2s 
+					color: $colorBlack
+					cursor: pointer
+					&:hover
+						background-color: $colorBg1
+				&--radio:checked
+					& + label 
+						transition: 0.2s 
+						border-color: $colorBlue
+			&-not-products
+				display: grid
+				grid-template-columns: repeat(5, 1fr)
+				grid-gap: 50px
+				margin-top: 10px
+				padding-top: 30px
+				border-top: 1px solid $colorFrame
+				&--item
+					color: $colorBlack
+					animation: goodsOpacity .3s linear
+				&--image
+					min-width: 144px
+					margin-bottom: 5px
+					text-align: center
+				&--desc
+					margin-bottom: 2.5px
+					font-size: 14px
+					height: 40px
+					overflow: hidden
+				&--price
+					position: relative
+					font-size: 20px
+					margin-bottom: 6.5px
+					&::after
+						content: '₸'
+						font-weight: 600
+						font-size: 20px
+				&--order
+					font-size: 14px
+					color: #BFBFBF
+					margin-bottom: 10px
+
+@keyframes goodsOpacity
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+			
+
+@media screen and (max-width: 1150px)
+	.page-shoping
+		padding-left: 30px
+	.page-shoping-wrapper__main-products,
+	.page-shoping-wrapper__main-not-products
+		grid-template-columns: repeat(4, 1fr)
+		grid-gap: 40px
+	
+@media screen and (max-width: 768px)
+	.page-shoping
+		padding-left: 0
+	.page-shoping-wrapper__main-products,
+	.page-shoping-wrapper__main-not-products
+		grid-template-columns: repeat(3, 1fr)
+		
+@media screen and (max-width: 545px)
+	.page-shoping-wrapper__main-products,
+	.page-shoping-wrapper__main-not-products
+		grid-template-columns: repeat(2, 1fr)
+
+@media screen and (max-width: 360px)
+	.page-shoping-wrapper__main-products--image,
+	.page-shoping-wrapper__main-not-products--image
+		min-width: 130px
+	.page-shoping-wrapper__main-products,
+	.page-shoping-wrapper__main-not-products
+		grid-gap: 30px
+	.page-shoping-wrapper__main-products--button a
+		font-size: 14px
+	.page-shoping-wrapper__main-products--price,
+	.page-shoping-wrapper__main-not-products--price
+		font-size: 18px
+
+
